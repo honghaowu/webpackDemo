@@ -1,0 +1,10 @@
+body{
+  background: #eee;
+  color: blue
+}
+.img{
+  width: 200px;
+  height: 200px;
+  background: url('../images/logo.png') no-repeat center;
+  background-size: contain;
+}
