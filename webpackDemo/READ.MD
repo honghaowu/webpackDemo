@@ -237,3 +237,12 @@ node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
         loader: 'sass-loader'
     }]
   },
+  
+  # 13 postcss处理属性前缀
+        安装：cnpm install postcss-loader autoprefixer --save-dev
+        在目录下新建 postcss.config.js
+        ```module.exports={
+  plugins: [
+    require('autoprefixer')
+  ]
+}```
