@@ -188,14 +188,14 @@ limit：是把小于500000B的文件打成Base64的格式，写入JS。
          use: "css-loader"
        })
      },
-```
+  ```
 * css分离后路径问题处理：  
   在webpack.config.js中声明对象：  
-  ```
+```
   var website ={
     publicPath:"http://172.30.67.141:8081/" //这里的IP和端口，是你本机的ip或者是你devServer配置的IP和端口。
   }
-  ```
+```
   再output中，配置如下：  
   ```
   output:{
