@@ -1,4 +1,4 @@
-# 1 webpack的安装 
+## 1 webpack的安装 
 * 进入命令窗口：win+R cmd 
 * 新建文件夹：mkdir webpackDemo
 * 进入文件夹：cd webpackDemo
@@ -7,7 +7,7 @@
 * 安装webpack: cnpm install webpack --save--dev (--save-dev是保存到package.json中的开发环境依赖包中)。
 * 检查webpack版本：webpack -v
 
-# 2 webpack入门
+## 2 webpack入门
 * 新建文件夹src和dist，src是源码文件，dist是我们编译打包好的文件；一个用于开发环境，一个用于生产环境。
 * 在dist文件夹下新建index.html,引入bundle.js，在src文件夹下新建entry.js。执行如下命令打包：
 * webpack {entry file} {destination for bundled file}  
@@ -16,7 +16,7 @@
 * 注意：在命令行中是不需要写{ }的。
 例如：$ webpack src/entery.js dist/bundle.js
 
-# 3 webpack.config.js的基本配置
+## 3 webpack.config.js的基本配置
 ```
 module.exports={
     //入口文件的配置项
@@ -40,7 +40,7 @@ module：配置模块，主要是解析CSS和图片转换压缩等功能。
 plugins：配置插件，根据你的需要配置不同功能的插件。  
 devServer：配置开发服务功能，后期我们会详细讲解。  
 
-# 4 配置服务和热更新
+## 4 配置服务和热更新
 * 执行webpack-dev-server：npm install webpack-dev-server –save-dev  
 * 配置devServer：  
 ```
@@ -67,7 +67,7 @@ port：服务运行端口，建议不使用80，很容易被占用，这里使�
 ```
 * 在终端运行 npm run server即可替代webpack-dev-server  
 
-# 5 css文件打包
+## 5 css文件打包
 * 在src新建css文件夹,新建index.css  
 * 在入口文件entery.js中引入import css from './css/index.css'  
 * 在webpack.config.js中配置module模块，  
@@ -128,7 +128,7 @@ loader的三种模块写法：
         ]
     },
 ```
-# 6 JS的压缩，注意压缩是在生产环境中，
+## 6 JS的压缩，注意压缩是在生产环境中，
 * 引入一个uglifyjs-webpack-plugin进行JS压缩，webpack版本里默认已经集成，不需要再次安装。
 * 在webpack.config.js中引入：
 ```
@@ -140,7 +140,7 @@ const uglify = require('uglifyjs-webpack-plugin');
         new uglify()
     ],
 ```
-# 7 配置插件 HTML文件的发布
+## 7 配置插件 HTML文件的发布
 * 安装：npm install html-webpack-plugin --save-dev  
   用此插件，不用手动JS引入代码（webpack会自动为我们引入JS）
 * 在webpack.config.js中修改如下：
@@ -157,7 +157,7 @@ minify：是对html文件进行压缩，removeAttrubuteQuotes是却掉属性的�
 hash：为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。  
 template：是要打包的html模版路径和文件名称。  
 
-# 8 图片的处理1,css中的图片
+## 8 图片的处理1,css中的图片
 * 安装图片loader： cnpm install file-loader url-loader --save-dev  
   file-loader：解决引用路径的问题;
   url-loader：如果图片较多，会发很多http请求，会降低页面性能,其中包含file-loader。
@@ -176,7 +176,7 @@ test:/\.(png|jpg|gif)/是匹配图片文件后缀名称。
 use：是指定使用的loader和loader的配置参数。  
 limit：是把小于500000B的文件打成Base64的格式，写入JS。  
 
-# 9 css分离,使用插件方法如下：
+## 9 css分离,使用插件方法如下：
 * 安装：npm install --save-dev extract-text-webpack-plugin  
 * 配置：const extractTextPlugin = require("extract-text-webpack-plugin");  
   plugins中配置：new extractTextPlugin("/css/index.css")；//这里的/css/index.css是分离后的路径位置。    
@@ -207,7 +207,7 @@ limit：是把小于500000B的文件打成Base64的格式，写入JS。
     },
 ```
 
-# 10 图片处理，处理html中的图片
+## 10 图片处理，处理html中的图片
 * webpack打包：package.json中配置：
 ```
 "scripts": {
@@ -238,7 +238,7 @@ limit：是把小于500000B的文件打成Base64的格式，写入JS。
  }
 ```
 
-# 11 less打包
+## 11 less打包
 less-loader 是将less文件编译成css  
 sass-loader 是将sass文件编译成css  
 * 安装：npm install less --save-dev  
@@ -259,7 +259,7 @@ sass-loader 是将sass文件编译成css
 * 在入口js中引入  
 import less from './css/black.less';
 
-# 12 sass文件的打包
+## 12 sass文件的打包
 node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
 * 安装：npm install node-sass sass-loader --save-dev
 * 配置：
@@ -276,7 +276,7 @@ node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
   },
 ```
 
-# 13 postcss处理属性前缀
+## 13 postcss处理属性前缀
 postcss-loader 和autoprefixer（自动添加前缀的插件）
 * 安装：npm install postcss-loader autoprefixer --save-dev
 * 在webpack.config.js同级建postcss.config.js
@@ -305,7 +305,7 @@ module.exports={
       ]
 }
 ```
-# 14 CSS冗余样式去除
+## 14 CSS冗余样式去除
 需要PurifyCSS插件和9中的extract-text-webpack-plugin相结合  
 PurifyCSS-webpack依赖purify-css  
 * 安装：npm i purifycss-webpack purify-css -D 
@@ -321,7 +321,7 @@ PurifyCSS-webpack依赖purify-css
   })
 ```
   paths，主要是需找html模板，purifycss根据这个配置会遍历你的文件，查找哪些css被使用了,没有使用到的css,会去除。
-# 15 ES6处理
+## 15 ES6处理
 * Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过便宜帮你达到以下目的：  
   使用下一代的javaScript代码(ES6,ES7….)，即使这些标准目前并未被当前的浏览器完全支持。  
   使用基于JavaScript进行了扩展的语言，比如React的JSX。
@@ -356,7 +356,7 @@ PurifyCSS-webpack依赖purify-css
     "presets":["react","env"]
 }
 ```
-# 16 映射，方便调试
+## 16 映射，方便调试
 * devtool配置：
 ```
 module.exports = {
