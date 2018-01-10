@@ -385,3 +385,11 @@ module.exports = {
   |  eval-source-map              |    --	   |     +	   |  no             |  原始源码              |
   |  source-map                   |    --	   |     --	   |  yes            |  原始源码              |
   |  nosources-source-map         |    --	   |     --    |  yes            |  无源码内容            |
+  
+    | 水果        | 价格    |  数量  |
+    | --------   | -----:   | :----: |
+    | 香蕉        | $1      |   5    |
+    | 苹果        | $1      |   6    |
+    | 草莓        | $1      |   7    |
+
+
