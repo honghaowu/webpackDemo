@@ -1,11 +1,11 @@
 # 1 webpack的安装 
-进入命令窗口：win+R cmd ，<br>
-新建文件夹：mkdir webpackDemo，<br>
-进入文件夹：cd webpackDemo<br>
-安装node,检查版本node -V<br>
-初始化项目目录：npm init (生成package.json文件，文件中包含了项目的信息和生产/开发环境)需要的依赖包。<br>
-安装webpack: cnpm install webpack --save--dev (--save-dev是保存到package.json中的开发环境依赖包中)。<br>
-检查webpack版本：webpack -v<br>
+* 进入命令窗口：win+R cmd 
+* 新建文件夹：mkdir webpackDemo
+* 进入文件夹：cd webpackDemo
+* 安装node,检查版本node -V
+* 初始化项目目录：npm init (生成package.json文件，文件中包含了项目的信息和生产/开发环境)需要的依赖包。
+* 安装webpack: cnpm install webpack --save--dev (--save-dev是保存到package.json中的开发环境依赖包中)。
+* 检查webpack版本：webpack -v
 
 # 2 webpack入门
 新建文件夹src和dist，src是源码文件，dist是我们编译打包好的文件；一个用于开发环境，一个用于生产环境。<br>
