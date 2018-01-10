@@ -321,3 +321,38 @@ PurifyCSS-webpack依赖purify-css
   })
 ```
   paths，主要是需找html模板，purifycss根据这个配置会遍历你的文件，查找哪些css被使用了,没有使用到的css,会去除。
+# 15 ES6处理
+* Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过便宜帮你达到以下目的：  
+  使用下一代的javaScript代码(ES6,ES7….)，即使这些标准目前并未被当前的浏览器完全支持。  
+  使用基于JavaScript进行了扩展的语言，比如React的JSX。
+* 安装：cnpm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev  
+  核心包：babel-core；常用包：解析ES6的babel-preset-es2015包和解析JSX的babel-preset-react包
+* 配置：
+```
+{
+    test:/\.(jsx|js)$/,
+    use:[{
+        loader:'babel-loader',
+        options:{
+            presets:[
+                "es2015","react"
+            ]
+        }
+    }],
+    exclude:/node_modules/
+}
+```
+* 为了方便Babel的配置，单独建立文件.babelrc,即把上面的options单独配置
+```
+{
+  "presets":["react","es2015"]
+}
+```
+* babel-preset-es2015，现在官方推荐使用的是babel-preset-env,
+* 安装：npm install --save-devv babel-preset-env
+* 配置：
+```
+{
+    "presets":["react","env"]
+}
+```
