@@ -214,7 +214,7 @@ module中配置：```{
   },
 ```
 * 运行：npm run build 进行打包  
-*  图片路径存放：
+* 图片路径存放：
 ```
   {
     test:/\.(png|jpg|gif)/ ,
@@ -229,10 +229,12 @@ module中配置：```{
 ```
 * 安装：npm install html-withimg-loader --save-dev  
 * 配置：
-```{
-      test: /\.(htm|html)$/i,
-      use: ["html-withimg-loader"]
-    }```
+```
+{
+   test: /\.(htm|html)$/i,
+   use: ["html-withimg-loader"]
+ }
+```
 
 # 11 less打包
 less-loader 是将less文件编译成css  
@@ -253,13 +255,14 @@ sass-loader 是将sass文件编译成css
   }, 
 ```
 * 在入口js中引入  
-```import less from './css/black.less';```
+import less from './css/black.less';
 
 # 12 sass文件的打包
 node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
 * 安装：npm install node-sass sass-loader --save-dev
 * 配置：
- ```{
+ ```
+ {
     test: /\.scss$/,
     use:[{
         loader: 'style-loader'
@@ -268,7 +271,8 @@ node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
     },{
         loader: 'sass-loader'
     }]
-  },```
+  },
+```
 
 # 13 postcss处理属性前缀
 postcss-loader 和autoprefixer（自动添加前缀的插件）
