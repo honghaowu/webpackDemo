@@ -177,24 +177,26 @@ use：是指定使用的loader和loader的配置参数。
 limit：是把小于500000B的文件打成Base64的格式，写入JS。  
 
 # 9 css分离,使用插件方法如下：
-* 安装：```npm install --save-dev extract-text-webpack-plugin```
-* 配置：```const extractTextPlugin = require("extract-text-webpack-plugin");```
-plugins中配置：```new extractTextPlugin("/css/index.css")；//这里的/css/index.css是分离后的路径位置。```
-module中配置：```{
-              test: /\.css$/,
-              use: extractTextPlugin.extract({
-                fallback: "style-loader",
-                use: "css-loader"
-              })
-            },```
-  css分离后路径问题处理：
-  在webpack.config.js中声明对象：
+* 安装：npm install --save-dev extract-text-webpack-plugin  
+* 配置：const extractTextPlugin = require("extract-text-webpack-plugin");  
+  plugins中配置：new extractTextPlugin("/css/index.css")；//这里的/css/index.css是分离后的路径位置。    
+  module中配置：
+  ```{
+       test: /\.css$/,
+       use: extractTextPlugin.extract({
+         fallback: "style-loader",
+         use: "css-loader"
+       })
+     },
+```
+* css分离后路径问题处理：  
+  在webpack.config.js中声明对象：  
   ```
   var website ={
     publicPath:"http://172.30.67.141:8081/" //这里的IP和端口，是你本机的ip或者是你devServer配置的IP和端口。
   }
   ```
-  再output中，配置如下：
+  再output中，配置如下：  
   ```
   output:{
         //输出的路径，用了Node语法
