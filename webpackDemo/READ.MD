@@ -305,3 +305,19 @@ module.exports={
       ]
 }
 ```
+# 14 CSS冗余样式去除
+需要PurifyCSS插件和9中的extract-text-webpack-plugin相结合  
+PurifyCSS-webpack依赖purify-css  
+* 安装：npm i purifycss-webpack purify-css -D 
+* 引入模块 
+  同步检查html模板，需要引入node的glob对象使用。在webpack.config.js文件头部引入glob：const glob = require('glob');  
+  引入purifycss-webpack：     
+  const PurifyCSSPlugin = require("purifycss-webpack");
+* 配置插件
+```
+  new PurifyCSSPlugin({
+    // Give paths to parse for rules. These should be absolute!
+    paths: glob.sync(path.join(__dirname, 'src/*.html')),
+  })
+```
+  paths，主要是需找html模板，purifycss根据这个配置会遍历你的文件，查找哪些css被使用了,没有使用到的css,会去除。
