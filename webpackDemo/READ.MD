@@ -8,30 +8,32 @@
 * 检查webpack版本：webpack -v
 
 # 2 webpack入门
-新建文件夹src和dist，src是源码文件，dist是我们编译打包好的文件；一个用于开发环境，一个用于生产环境。<br>
-在dist文件夹下新建index.html,引入bundle.js，在src文件夹下新建entry.js。执行如下命令打包：<br>
-webpack {entry file} {destination for bundled file}<br>
-{entry file}:入口文件的路径，本文中就是src/entery.js的路径；<br>
-{destination for bundled file}:填写打包后存放的路径。<br>
-注意：在命令行中是不需要写{ }的。<br>
-例如：$ webpack src/entery.js dist/bundle.js<br>
+* 新建文件夹src和dist，src是源码文件，dist是我们编译打包好的文件；一个用于开发环境，一个用于生产环境。
+* 在dist文件夹下新建index.html,引入bundle.js，在src文件夹下新建entry.js。执行如下命令打包：
+* webpack {entry file} {destination for bundled file}
+{entry file}:入口文件的路径，本文中就是src/entery.js的路径；
+{destination for bundled file}:填写打包后存放的路径。
+* 注意：在命令行中是不需要写{ }的。
+例如：$ webpack src/entery.js dist/bundle.js
 
 # 3 webpack.config.js的基本配置
-module.exports={<br>
-    //入口文件的配置项<br>
-    entry:{},<br>
-    //出口文件的配置项<br>
-    output:{<br>
-      path: path.resolve(__dirname,'dist'),//绝对路径<br>
-      filename: 'bundle.js'//打包后的名字'[name].js'会和入口的名称相同<br>
-    },<br>
-    //模块：例如解读CSS,图片如何转换，压缩<br>
-    module:{},<br>
-    //插件，用于生产模版和各项功能<br>
-    plugins:[],<br>
-    //配置webpack开发服务功能<br>
-    devServer:{}<br>
+```
+module.exports={
+    //入口文件的配置项
+    entry:{},
+    //出口文件的配置项
+    output:{
+      path: path.resolve(__dirname,'dist'),//绝对路径
+      filename: 'bundle.js'//打包后的名字'[name].js'会和入口的名称相同
+    },
+    //模块：例如解读CSS,图片如何转换，压缩
+    module:{},
+    //插件，用于生产模版和各项功能
+    plugins:[],
+    //配置webpack开发服务功能
+    devServer:{}
 }
+```
 entry：配置入口文件的地址，可以是单一入口，也可以是多入口。<br>
 output：配置出口文件的地址，在webpack2.X版本后，支持多出口配置。<br>
 module：配置模块，主要是解析CSS和图片转换压缩等功能。<br>
