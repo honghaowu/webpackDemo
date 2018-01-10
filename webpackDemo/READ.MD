@@ -34,34 +34,38 @@ module.exports={
     devServer:{}
 }
 ```
-entry：配置入口文件的地址，可以是单一入口，也可以是多入口。<br>
-output：配置出口文件的地址，在webpack2.X版本后，支持多出口配置。<br>
-module：配置模块，主要是解析CSS和图片转换压缩等功能。<br>
-plugins：配置插件，根据你的需要配置不同功能的插件。<br>
-devServer：配置开发服务功能，后期我们会详细讲解。<br>
+entry：配置入口文件的地址，可以是单一入口，也可以是多入口。  
+output：配置出口文件的地址，在webpack2.X版本后，支持多出口配置。  
+module：配置模块，主要是解析CSS和图片转换压缩等功能。  
+plugins：配置插件，根据你的需要配置不同功能的插件。  
+devServer：配置开发服务功能，后期我们会详细讲解。  
 
 # 4 配置服务和热更新
-执行webpack-dev-server：npm install webpack-dev-server –save-dev<br>
-配置devServer：<br>
-devServer:{<br>
-        //设置基本目录结构<br>
-        contentBase:path.resolve(__dirname,'dist'),<br>
-        //服务器的IP地址，可以使用IP也可以使用localhost<br>
-        host:'localhost',<br>
-        //服务端压缩是否开启<br>
-        compress:true,<br>
-        //配置服务端口号<br>
-        port:8081<br>
-    }<br>
-contentBase:配置服务器基本运行路径，用于找到程序打包地址。<br>
-host：服务运行地址，建议使用本机IP，这里为了讲解方便，所以用localhost。<br>
-compress：服务器端压缩选型，一般设置为开启，如果你对服务器压缩感兴趣，可以自行学习。<br>
-port：服务运行端口，建议不使用80，很容易被占用，这里使用了8081.<br>
-在package.json中配置如下：<br>
-"scripts":{<br>
-    "server":"webpack-dev-server"<br>
-  }<br>
-  在终端运行 npm run server即可替代webpack-dev-server<br>
+* 执行webpack-dev-server：npm install webpack-dev-server –save-dev  
+* 配置devServer：  
+```
+devServer:{
+        //设置基本目录结构
+        contentBase:path.resolve(__dirname,'dist'),
+        //服务器的IP地址，可以使用IP也可以使用localhost
+        host:'localhost',
+        //服务端压缩是否开启
+        compress:true,
+        //配置服务端口号
+        port:8081
+    }
+```
+contentBase:配置服务器基本运行路径，用于找到程序打包地址。  
+host：服务运行地址，建议使用本机IP，这里为了讲解方便，所以用localhost。  
+compress：服务器端压缩选型，一般设置为开启，如果你对服务器压缩感兴趣，可以自行学习。  
+port：服务运行端口，建议不使用80，很容易被占用，这里使用了8081.  
+* 在package.json中配置如下：
+```
+"scripts":{ 
+    "server":"webpack-dev-server" 
+  } 
+```
+* 在终端运行 npm run server即可替代webpack-dev-server  
 
 # 5 css文件打包
 在src新建css文件夹,新建index.css<br>
