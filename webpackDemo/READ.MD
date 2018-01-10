@@ -349,7 +349,7 @@ PurifyCSS-webpack依赖purify-css
 }
 ```
 * babel-preset-es2015，现在官方推荐使用的是babel-preset-env,
-* 安装：npm install --save-devv babel-preset-env
+* 安装：npm install --save-dev babel-preset-env
 * 配置：
 ```
 {
