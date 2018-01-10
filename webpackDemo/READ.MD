@@ -10,9 +10,9 @@
 # 2 webpack入门
 * 新建文件夹src和dist，src是源码文件，dist是我们编译打包好的文件；一个用于开发环境，一个用于生产环境。
 * 在dist文件夹下新建index.html,引入bundle.js，在src文件夹下新建entry.js。执行如下命令打包：
-* webpack {entry file} {destination for bundled file}
-{entry file}:入口文件的路径，本文中就是src/entery.js的路径；
-{destination for bundled file}:填写打包后存放的路径。
+* webpack {entry file} {destination for bundled file}  
+  {entry file}:入口文件的路径，本文中就是src/entery.js的路径；  
+  {destination for bundled file}:填写打包后存放的路径。
 * 注意：在命令行中是不需要写{ }的。
 例如：$ webpack src/entery.js dist/bundle.js
 
@@ -83,7 +83,7 @@ module:{
           ]
     },
 ```
-> 注：
+注：  
 test：用于匹配处理文件的扩展名的表达式，这个选项是必须进行配置的；  
 use：loader名称，就是你要使用模块的名称，这个选项也必须进行配置，否则报错；  
 include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；  
@@ -141,24 +141,28 @@ const uglify = require('uglifyjs-webpack-plugin');
     ],
 ```
 # 7 配置插件 HTML文件的发布
-安装：npm install html-webpack-plugin --save-dev
-在webpack.config.js中修改如下：
-引入插件：const htmlPlugin=require('html-webpack-plugin');
-配置,在plugins中：
+* 安装：npm install html-webpack-plugin --save-dev  
+  用此插件，不用手动JS引入代码（webpack会自动为我们引入JS）
+* 在webpack.config.js中修改如下：
+  引入插件：```const htmlPlugin=require('html-webpack-plugin');```
+* 配置,在plugins中：
+```
 new htmlPlugin({
         minify:{removeAttributeQuotes:true},
         hash: true,
         template: './src/index.html'
       })
-minify：是对html文件进行压缩，removeAttrubuteQuotes是却掉属性的双引号。
-hash：为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。
-template：是要打包的html模版路径和文件名称。
+```
+minify：是对html文件进行压缩，removeAttrubuteQuotes是却掉属性的双引号。  
+hash：为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。  
+template：是要打包的html模版路径和文件名称。  
 
 # 8 图片的处理1,css中的图片
-安装图片loader： cnpm install file-loader url-loader --save-dev
-file-loader：解决引用路径的问题;
-url-loader：如果图片较多，会发很多http请求，会降低页面性能,其中包含file-loader。
-配置如下：
+* 安装图片loader： cnpm install file-loader url-loader --save-dev  
+  file-loader：解决引用路径的问题;
+  url-loader：如果图片较多，会发很多http请求，会降低页面性能,其中包含file-loader。
+* 配置如下：
+```
 {
   test: /\.(png|jpg|gif)/,
   use: [{
@@ -167,27 +171,31 @@ url-loader：如果图片较多，会发很多http请求，会降低页面性能
       limit: 500000
     }
   }
-test:/\.(png|jpg|gif)/是匹配图片文件后缀名称。
-use：是指定使用的loader和loader的配置参数。
-limit：是把小于500000B的文件打成Base64的格式，写入JS。
+```
+test:/\.(png|jpg|gif)/是匹配图片文件后缀名称。  
+use：是指定使用的loader和loader的配置参数。  
+limit：是把小于500000B的文件打成Base64的格式，写入JS。  
 
 # 9 css分离,使用插件方法如下：
-安装：npm install --save-dev extract-text-webpack-plugin
-配置：const extractTextPlugin = require("extract-text-webpack-plugin");
-plugins中配置：new extractTextPlugin("/css/index.css")；//这里的/css/index.css是分离后的路径位置。
-module中配置：{
+* 安装：```npm install --save-dev extract-text-webpack-plugin```
+* 配置：```const extractTextPlugin = require("extract-text-webpack-plugin");```
+plugins中配置：```new extractTextPlugin("/css/index.css")；//这里的/css/index.css是分离后的路径位置。```
+module中配置：```{
               test: /\.css$/,
               use: extractTextPlugin.extract({
                 fallback: "style-loader",
                 use: "css-loader"
               })
-            },
+            },```
   css分离后路径问题处理：
   在webpack.config.js中声明对象：
+  ```
   var website ={
     publicPath:"http://172.30.67.141:8081/" //这里的IP和端口，是你本机的ip或者是你devServer配置的IP和端口。
   }
+  ```
   再output中，配置如下：
+  ```
   output:{
         //输出的路径，用了Node语法
         path:path.resolve(__dirname,'dist'),
@@ -195,55 +203,63 @@ module中配置：{
         filename:'[name].js',
         publicPath:website.publicPath
     },
+```
 
 # 10 图片处理，处理html中的图片。
-webpack打包：package.json中配置：<br>
- "scripts": {<br>
-    "server": "webpack-dev-server",<br>
-    "build": "webpack"<br>
-  },<br>
-  运行：npm run build 进行打包<br>
-  图片路径存放：<br>
-  {<br>
-    test:/\.(png|jpg|gif)/ ,<br>
-    use:[{<br>
-        loader:'url-loader',<br>
-        options:{<br>
-            limit:5000,<br>
-            outputPath:'images/',// 图片的存放路径<br>
-        }<br>
-    }]<br>
-  }<br>
-  安装：npm install html-withimg-loader --save-dev<br>
-  配置：{<br>
-        test: /\.(htm|html)$/i,<br>
-        use: ["html-withimg-loader"]<br>
-      }<br>
+* webpack打包：package.json中配置：
+```
+ "scripts": {
+    "server": "webpack-dev-server",
+    "build": "webpack"
+  },
+```
+* 运行：npm run build 进行打包  
+*  图片路径存放：
+```
+  {
+    test:/\.(png|jpg|gif)/ ,
+    use:[{
+        loader:'url-loader',
+        options:{
+            limit:5000,
+            outputPath:'images/',// 图片的存放路径
+        }
+    }]
+  }
+```
+* 安装：npm install html-withimg-loader --save-dev  
+* 配置：
+```{
+      test: /\.(htm|html)$/i,
+      use: ["html-withimg-loader"]
+    }```
 
 # 11 less打包
-less-loader 是将less文件编译成css<br>
-sass-loader 是将sass文件编译成css<br>
-安装：npm install less --save-dev<br>
-      npm install less-loader --save-dev (编译为css)<br>
-配置module（loader的加载要有先后顺序）：<br>
-  {<br>
-    test: /\.less$/,<br>
-    use: [{<br>
-      loader: 'style-loader'<br>
+less-loader 是将less文件编译成css  
+sass-loader 是将sass文件编译成css  
+* 安装：npm install less --save-dev  
+      npm install less-loader --save-dev (编译为css)  
+* 配置module（loader的加载要有先后顺序）： 
+```
+  {
+    test: /\.less$/,
+    use: [
+      loader: 'style-loader'
     },{<br>
-      loader: 'css-loader'<br>
+      loader: 'css-loader'
     },{<br>
-      loader: 'less-loader'<br>
-    }]<br>
-  }, <br>
-在入口js中引入<br>
-import less from './css/black.less';<br>
+      loader: 'less-loader'
+    }]
+  }, 
+```
+* 在入口js中引入  
+```import less from './css/black.less';```
 
 # 12 sass文件的打包
 node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
-安装：npm install node-sass sass-loader --save-dev
-配置：
- {
+* 安装：npm install node-sass sass-loader --save-dev
+* 配置：
+ ```{
     test: /\.scss$/,
     use:[{
         loader: 'style-loader'
@@ -252,8 +268,8 @@ node-sass：因为sass-loader依赖于node-sass，所以需要先安装node-sass
     },{
         loader: 'sass-loader'
     }]
-  },
-  <br>
+  },```
+
 # 13 postcss处理属性前缀
 postcss-loader 和autoprefixer（自动添加前缀的插件）
 * 安装：npm install postcss-loader autoprefixer --save-dev
