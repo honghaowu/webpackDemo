@@ -205,15 +205,15 @@ module中配置：```{
     },
 ```
 
-# 10 图片处理，处理html中的图片。
+# 10 图片处理，处理html中的图片
 * webpack打包：package.json中配置：
 ```
- "scripts": {
+"scripts": {
     "server": "webpack-dev-server",
     "build": "webpack"
-  },
+},
 ```
-* 运行：npm run build 进行打包  
+* 运行：npm run build 进行打包
 * 图片路径存放：
 ```
   {
