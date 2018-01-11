@@ -7,4 +7,13 @@ body{
   height: 200px;
   background: url('../images/logo.png') no-repeat center;
   background-size: contain;
+  transform: translate(20px);
+}
+.bg{
+  background: lightblue;
+}
+h1{
+  text-align: center;
+  font-size: 30px;
+  color: #202020;
 }
