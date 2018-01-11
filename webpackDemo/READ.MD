@@ -387,3 +387,35 @@ module.exports = {
   |  nosources-source-map         |    --	   |     --    |  yes            |  无源码内容           |
 
 
+## 17 开发与生产环境
+* 在package.json中，  
+  开发依赖： devDependencies 下面的包，安装例如：npm install jquery --save-dev	  
+  生产依赖： dependencies 下面的包,安装例如：npm install jquery --save  
+* 安装全部依赖： npm install  
+  安装生产环境依赖： npm install --production
+
+## 	18 模块化配置（以entery入口为例）
+* 配置前：
+```
+ //入口文件的配置项
+    entry:{
+      entry:'./src/entry.js'
+    },
+```
+* 配置过程，新建文件夹webpack_config,新建entry_webpack.js，写入：
+```
+//声明对象
+const entry={};
+// 声明路径属性
+entry.path={
+  entry: './src/entry.js'
+}
+// 模块化
+module.exports=entry;
+```
+webpack.config.js中配置修改：
+引入entry模块：const entry=require('./webpack_config/entry_webpack.js');
+配置修改如下：
+```
+ entry:entry.path,
+```
