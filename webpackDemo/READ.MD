@@ -429,10 +429,10 @@ webpack.config.js中配置修改：
   需要插件：ProvidePlugin  
   ProvidePlugin是一个webpack自带的插件，  
   因为ProvidePlugin是webpack自带的插件，所以要先再webpack.config.js中引入webpack。
-  配置如下：
+配置如下：
   ```  
-  const webpack=require('webpack');
-  plugins: [
+  const webpack=require('webpack');
+  plugins: [
     new webpack.ProvidePlugin({
       $:'jquery'
     })
