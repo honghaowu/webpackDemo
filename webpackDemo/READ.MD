@@ -423,7 +423,7 @@ webpack.config.js中配置修改：
 * 第一种  
   安装： npm install jquery --save  
   在entry.js中引入： import $ from 'jquery'  
-  然后直接在引入后的文件中使用 $(".xx").html(xxx);
+  然后直接在引入后的文件中使用 $(".xx").html(xxx);   
   vue的引入多用这种方法
 * 第二种：plugin引入  
   webapck.config.js中配置的方法  
@@ -439,3 +439,5 @@ webpack.config.js中配置修改：
     })
   ]
   ```
+  import引入方法：引用后不管你在代码中使用不适用该类库，都会把该类库打包起来，这样有时就会让代码产生冗余。   
+  ProvidePlugin引入方法：引用后只有在类库使用时，才按需进行打包，所以建议在工作使用插件的方式进行引入。
