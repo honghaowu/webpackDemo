@@ -424,7 +424,8 @@ webpack.config.js中配置修改：
   安装： npm install jquery --save  
   在entry.js中引入： import $ from 'jquery'  
   然后直接在引入后的文件中使用 $(".xx").html(xxx);
-* 第二种：plugin引入  
+  vue的引入多用这种方法
+* 第二种：plugin引入  
   webapck.config.js中配置的方法  
   需要插件：ProvidePlugin  
   ProvidePlugin是一个webpack自带的插件，  
