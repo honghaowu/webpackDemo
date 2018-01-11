@@ -423,16 +423,18 @@ webpack.config.js中配置修改：
 * 第一种  
   安装： npm install jquery --save  
   在entry.js中引入： import $ from 'jquery'  
-  使用 $(".xx").html(xxx);
+  然后直接在引入后的文件中使用 $(".xx").html(xxx);
 * 第二种：plugin引入  
   webapck.config.js中配置的方法  
-  需要插件：ProvidePlugin
+  需要插件：ProvidePlugin  
   ProvidePlugin是一个webpack自带的插件，  
   因为ProvidePlugin是webpack自带的插件，所以要先再webpack.config.js中引入webpack。
   配置如下：
   ```  
-  const webpack=require('webpack');
-  plugins: [
+  //引入模块
+  const webpack=require('webpack');
+  //配置插件
+  plugins: [
     new webpack.ProvidePlugin({
       $:'jquery'
     })
