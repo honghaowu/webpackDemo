@@ -413,8 +413,8 @@ entry.path={
 // 模块化
 module.exports=entry;
 ```
-webpack.config.js中配置修改：
-引入entry模块：const entry=require('./webpack_config/entry_webpack.js');
+webpack.config.js中配置修改：  
+引入entry模块：const entry=require('./webpack_config/entry_webpack.js');   
 配置修改如下：
 ```
  entry:entry.path,
