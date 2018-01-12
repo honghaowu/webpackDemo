@@ -443,3 +443,15 @@ webpack.config.js中配置修改：
   ```
   import引入方法：引用后不管你在代码中使用不适用该类库，都会把该类库打包起来，这样有时就会让代码产生冗余。   
   ProvidePlugin引入方法：引用后只有在类库使用时，才按需进行打包，所以建议在工作使用插件的方式进行引入。
+ **webpack-zepto安装**  
+   npm install webpack-zepto --save  
+   ```  
+  const webpack=require('webpack');
+  plugins: [
+    new webpack.ProvidePlugin({
+      $:'webpack-zepto'
+    })
+  ]
+  ```
+  *直接用zepto不行*
+ 
