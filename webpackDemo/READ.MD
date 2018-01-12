@@ -422,8 +422,8 @@ webpack.config.js中配置修改：
  entry:entry.path,
 ```
 ## 19 引入第三方库的方法（以jQuery为例）
-* 第一种  
-  安装： npm install jquery --save  
+* 安装： npm install jquery --save 
+* 第一种    
   在entry.js中引入： import $ from 'jquery'  
   然后直接在引入后的文件中使用 $(".xx").html(xxx);   
   vue的引入多用这种方法
