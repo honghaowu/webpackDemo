@@ -5,12 +5,12 @@
 
 ## <h2 id='1'>1.搭建步骤</h2>
 ### 1.1 webpack安装
-      *npm 初始化，(-y就是yes缩写，按照默认项初始化npm)*
-      npm init -y   
-      npm install webpack --save-dev
-      webpack -v
+*npm 初始化，(-y就是yes缩写，按照默认项初始化npm)*
+npm init -y      
+npm install webpack --save-dev
+webpack -v
 ### 1.2 package.json配置
-        ```
+```
         {
           "name": "ES6",
           "version": "1.0.0",
@@ -49,7 +49,7 @@
             "webpack-zepto": "^0.0.1"//第三方插件zepto
           }
         }
-        ```
+```
 
 
 ## <h2 id='2'>2.注意事项</h2>
