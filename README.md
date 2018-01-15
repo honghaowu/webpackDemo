@@ -1,6 +1,7 @@
 # webpack搭建移动端开发运行环境
 ## [1.搭建步骤](#1)
 ## [2.注意事项](#2)
+## [3.详细说明](https://github.com/honghaowu/webpackDemo/blob/master/webpackDemo/READ.MD)
 
 ## <h2 id='1'>1.搭建步骤</h2>
 ### 1.1 webpack安装
