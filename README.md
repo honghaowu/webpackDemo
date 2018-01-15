@@ -49,11 +49,9 @@
           }
         }
         ```
-### 1.1webpack安装
-### 1.1webpack安装
 
 
-## <h2 id='2'>注意事项</h2>
+## <h2 id='2'>2.注意事项</h2>
 ### 2.1 html中img路径
   ```
   const website={
