@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+/*
+    默认样式
+*/
+
+html {
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+  font-family: Arial,Tahoma,"Lucida Grande",Verdana,'Droid Sans','Hiragino Sans GB',"Microsoft Yahei",STXihei,hei,'sans-serif';
+  font-size: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+}
+
+img,div,body,html {
+  -webkit-touch-callout: none;
+}
+
+html,body,h1,h2,h3,h4,h5,h6,div,p {
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+footer,header {
+  display: block;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  border: 0;
+  width: 100%;
+  display: block;
+}
+
+/*
+    主体的样式区域
+*/
+
+.wrap header h1 {
+  font-size: .3rem;
+  color: #fff;
+  text-align: center;
+  padding: .3rem 0;
+  text-shadow: 2px 2px 0 #f00;
+  -webkit-transition: all 0s;
+  transition: all 0s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
+  background: linear-gradient(#fff, #000);
+}
+
+.wrap header .subtitle {
+  font-size: .3rem;
+  padding: .5rem 0;
+  text-align: center;
+  color: blue;
+  text-decoration: underline;
+}
+
+.wrap header .box {
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  background: url(http://localhost:8082/imgs/6927c5c6a876205ab89d27b5e39cd62e.png) no-repeat center;
+  background-size: 100% auto;
+  font-size: .6rem;
+  line-height: 200px;
+  text-align: center;
+}
+
+/*375下的媒体查询*/
+
+@media only screen and (device-width: 320px) and (orientation: portrait) {
+  html {
+    font-size: 42.66px;
+  }
+}
+
+@media only screen and (device-width: 360px) and (orientation: portrait) {
+  html {
+    font-size: 48px;
+  }
+}
+
+@media only screen and (device-width: 375px) and (orientation: portrait) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (device-width: 384px) and (orientation: portrait) {
+  html {
+    font-size: 51.2px;
+  }
+}
+
+@media only screen and (device-width: 400px) and (orientation: portrait) {
+  html {
+    font-size: 53.33px;
+  }
+}
+
+@media only screen and (device-width: 412px) and (orientation: portrait) {
+  html {
+    font-size: 54.93px;
+  }
+}
+
+@media only screen and (device-width: 414px) and (orientation: portrait) {
+  html {
+    font-size: 55.2px;
+  }
+}
+
+@media only screen and (device-width: 480px) and (orientation: portrait) {
+  html {
+    font-size: 64px;
+  }
+}
+
+@media only screen and (device-width: 540px) and (orientation: portrait) {
+  html {
+    font-size: 72px;
+  }
+}
+
+@media only screen and (device-width: 640px) and (orientation: portrait) {
+  html {
+    font-size: 85.33px;
+  }
+}
+
+@media only screen and (device-width: 720px) and (orientation: portrait) {
+  html {
+    font-size: 96px;
+  }
+}
+
+@media only screen and (device-width: 768px) and (orientation: portrait) {
+  html {
+    font-size: 102.4px;
+  }
+}
+/*# sourceMappingURL=style.css.map*/

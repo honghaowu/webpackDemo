@@ -1,0 +1,152 @@
+@charset "utf-8";
+/*
+    默认样式
+*/
+html{
+    height: 100%;
+    -webkit-user-select: none;
+    user-select:none;
+}
+body{
+    -webkit-user-select: none;
+    user-select:none;
+    height: 100%;
+    font-family: Arial,Tahoma,"Lucida Grande",Verdana,'Droid Sans','Hiragino Sans GB',"Microsoft Yahei",STXihei,hei,'sans-serif';
+    font-size: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling:touch;
+    background: #fff;
+    padding:constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+    &.popShow{
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+}
+img,div,body,html,ul,li,a{ -webkit-touch-callout: none; } //Disable the popup menu when you long Press the page ( under the IOS valid )
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,input,textarea{margin:0;padding:0;color:#333;}
+footer,header,nav,section,summary {display: block;}
+*{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a {background-color: transparent;text-decoration: none;}
+a:active,a:hover {outline: 0;}
+img {border: 0; width: 100%;display: block;}
+input,
+textarea {
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    margin: 0; /* 3 */
+    outline: 0;
+}
+input {
+    line-height: normal;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+li{list-style:none;}
+/*
+    主体的样式区域
+*/
+.wrap{
+    header{
+      h1{
+        font-size: .3rem;
+        color: #fff;
+        text-align: center;
+        padding: .3rem 0;
+        text-shadow: 2px 2px 0 #f00;
+        transition: all 0s;
+        background: linear-gradient(#fff,#000);
+      }
+      .subtitle{
+        font-size: .3rem;
+        padding: .5rem 0;
+        text-align: center;
+        color: blue;
+        text-decoration: underline;
+      }
+      .add{
+        font-size: .24rem;
+        color: #000;
+        text-align: center;
+      }
+      .box{
+        margin: 0 auto;
+        height: 200px;
+        width: 200px;
+        background: url('../imgs/head2.png') no-repeat center;
+        background-size: 100% auto;
+        font-size: .6rem;
+        line-height: 200px;
+        text-align: center;
+      }
+    }
+    .con{
+     
+
+    }
+    footer{
+    }
+}
+/*375下的媒体查询*/
+@media only screen and (device-width : 320px) and (orientation : portrait) {
+    html{
+        font-size: 42.66px;
+    }
+}
+@media only screen and (device-width : 360px) and (orientation : portrait) {
+    html{
+        font-size: 48px;
+    }
+}
+@media only screen and (device-width : 375px) and (orientation : portrait) {
+    html{
+        font-size: 50px;
+    }
+}
+@media only screen and (device-width : 384px) and (orientation : portrait) {
+    html{
+        font-size: 51.2px;
+    }
+}
+@media only screen and (device-width : 400px) and (orientation : portrait) {
+    html{
+        font-size: 53.33px;
+    }
+}
+@media only screen and (device-width : 412px) and (orientation : portrait) {
+    html{
+        font-size: 54.93px;
+    }
+}
+@media only screen and (device-width : 414px) and (orientation : portrait) {
+    html{
+        font-size: 55.2px;
+    }
+}
+@media only screen and (device-width : 480px) and (orientation : portrait) {
+    html{
+        font-size: 64px;
+    }
+}
+@media only screen and (device-width : 540px) and (orientation : portrait) {
+    html{
+        font-size: 72px;
+    }
+}
+@media only screen and (device-width : 640px) and (orientation : portrait) {
+    html{
+        font-size: 85.33px;
+    }
+}
+@media only screen and (device-width : 720px) and (orientation : portrait) {
+    html{
+        font-size: 96px;
+    }
+}
+@media only screen and (device-width : 768px) and (orientation : portrait) {
+    html{
+        font-size: 102.4px;
+    }
+}
